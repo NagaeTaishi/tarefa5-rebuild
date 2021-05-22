@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>電卓</title>
+        <link rel="stylesheet" href="tarefa4.css">
+        <script src="jquery-3.6.0.min.js"></script>
+    </head>  
+    <body>
+        <section class="container">
+            <div>
+                <div class="calc">
+                    <p id="outPut">0</p>
+                </div>
+                <div class="flex-button">
+                    <input type="button" value ="7" onclick="typeNumber(7)"></button>
+                    <input type="button" value ="8" onclick="typeNumber(8)"></button>
+                    <input type="button" value ="9" onclick="typeNumber(9)"></button>
+                    <input type="button" value ="+" onclick="calculate('+')"></button>
+                    
+                    <input type="button" value ="4" onclick="typeNumber(4)"></button>
+                    <input type="button" value ="5" onclick="typeNumber(5)"></button>
+                    <input type="button" value ="6" onclick="typeNumber(6)"></button>
+                    <input type="button" value ="-" onclick="calculate('-')"></button>
+                    
+                    <input type="button" value ="1" onclick="typeNumber(1)"></button>
+                    <input type="button" value ="2" onclick="typeNumber(2)"></button>
+                    <input type="button" value ="3" onclick="typeNumber(3)"></button>
+                    <input type="button" value ="*" onclick="calculate('*')"></button>
+                    
+                    <input type="button" value ="0" onclick="typeNumber(0)"></button>
+                    <input type="button" value ="00" onclick="typeNumber(00)"></button>
+                    <input type="button" value ="." onclick="calculate('.')"></button>
+                    <input type="button" value ="/" onclick="calculate('/')"></button>
+                </div>
+                <div class="flex-button bottom">
+                    <input type="button" value="AC" onclick="allClear()"></input>
+                    <input type="button" value="=" onclick="iqual()"></input>
+                </div>
+            </div>
+        </section>
+        <script>
+            //クリックしたボタンの数字を、output欄に表示させる。
+            let outPut = document.getElementById('outPut');
+            function typeNumber(value){
+                if (outPut.innerHTML === "0"){
+                    outPut.innerHTML = value;
+                } else{
+                   outPut.innerHTML += value;
+                }
+            }
+            
+            function allClear() {
+                outPut.innerHTML = "0";
+            }    
+            
+            function calculate(value){
+                outPut.innerHTML += value;
+            }
+            
+            function iqual(){
+                
+            }
+
+            
+            
+        </script>
+    </body>
+    
+</html>
