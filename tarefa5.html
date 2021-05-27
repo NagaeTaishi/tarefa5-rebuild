@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>リアルタイムフィルター</title>
+        <link rel="stylesheet" href="tarefa5.css">
+        <link href="tarefa5.js">
+    </head>  
+    <body>
+        <section class="container">
+            <div>
+                <h1>プログラミングキャンプ</h1>
+                <p>入力した文字を含まない要素は非表示となります。</p>
+                <input id="searchSpace"type="text"></input>
+            </div>
+            <div class="flex-box">
+                <div class="inner-box">
+                  <!--<a href="https://camp.potepan.com/">--> 
+                    <img src="material/potepan.jpeg">
+                    <p>キーワード</p>
+                    <p class="keyword">ぽてぱん</p>
+                    <p class="keyword">ポテパン</p>　
+                    <p class="keyword">potepan</p>
+                  <!--</a>-->  
+                </div>
+                
+                <div class="inner-box">
+                  <!--<a href="https://codecamp.jp/">-->
+                    <img src="material/codecamp.png">
+                    <p>キーワード</p>
+                    <p class="keyword">こーどきゃんぷ</p>
+                    <p class="keyword">コードキャンプ</p>　
+                    <p class="keyword">codecamp</p>
+                  <!--</a>-->
+                </div>
+                <div class="inner-box">
+                  <!--<a href="https://web-camp.io/">-->
+                    <img src="material/DMM.jpeg">
+                    <p>キーワード</p>
+                    <p class="keyword">DMM</p>
+                    <p class="keyword">dmm</p>
+                    <p class="keyword">ディーエムエム</p>　
+                  <!--</a>-->  
+                </div>
+                <div class="inner-box">
+                  <!--<a href="https://www.sejuku.net/">-->
+                    <img src="material/samurai.png">
+                    <p>キーワード</p>
+                    <p class="keyword">侍エンジニア</p>
+                    <p class="keyword">さむらい</p>　
+                    <p class="keyword">samurai</p>                  
+                  <!--</a>-->  
+                </div>
+                <div class="inner-box">
+                  <!--<a href="https://techacademy.jp/">-->
+                    <img src="material/techacademy.png">
+                    <p>キーワード</p>
+                    <p class="keyword">テックアカデミー</p>
+                    <p class="keyword">てっくあかでみー</p>　
+                    <p class="keyword">techacademy</p>                  
+                  <!--</a>-->  
+                </div>
+                <div class="inner-box">
+                  <!--<a href="https://tech-camp.in/">-->
+                    <img src="material/techcamp.png">
+                    <p>キーワード</p>
+                    <p class="keyword">てっくきゃんぷ</p>
+                    <p class="keyword">テックキャンプ</p>　
+                    <p class="keyword">techcamp</p>                  
+                  <!--</a>-->  
+                </div>
+            </div>    
+        </section> 
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+          function Search(text){
+              $(".keyword").each(function(index, element){
+                let keyword = $(element).text();
+                if(keyword.indexOf(text) === -1){
+                  $(element).parent().css("display", "none");
+                }else{
+                  $(element).parent().css("display", "block");
+                }
+                //if(keyword.indexOf(text) === -1){
+                //  $(".inner-box").css("display", "none");
+                //}else{
+                //  $(".inner-box").css("display", "block");
+                //}
+              }
+              );
+            }
+            
+            $("#searchSpace").on("input", function(event){
+              let text = $("#searchSpace").val();
+              if(text === ""){
+                $(".inner-box").css("display", "block");
+              }else{
+                Search(text);
+              }
+            })
+        </script>
+    </body>
+    
+</html>
