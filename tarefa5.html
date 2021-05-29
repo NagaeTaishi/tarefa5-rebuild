@@ -16,59 +16,71 @@
             </div>
             <div class="flex-box">
                 <div class="inner-box">
-                  <!--<a href="https://camp.potepan.com/">--> 
+                  <a href="https://camp.potepan.com/">
                     <img src="material/potepan.jpeg">
                     <p>キーワード</p>
-                    <p class="keyword">ぽてぱん</p>
-                    <p class="keyword">ポテパン</p>　
-                    <p class="keyword">potepan</p>
-                  <!--</a>-->  
+                    <div class="keyword">
+                      <p class="inline">ぽてぱん</p>
+                      <p class="inline">ポテパン</p>　
+                      <p class="inline">potepan</p>
+                    </div>
+                  </a>
                 </div>
                 
                 <div class="inner-box">
-                  <!--<a href="https://codecamp.jp/">-->
+                  <a href="https://codecamp.jp/">
                     <img src="material/codecamp.png">
                     <p>キーワード</p>
-                    <p class="keyword">こーどきゃんぷ</p>
-                    <p class="keyword">コードキャンプ</p>　
-                    <p class="keyword">codecamp</p>
-                  <!--</a>-->
+                    <div class="keyword">
+                      <p class="inline">こーどきゃんぷ</p>
+                      <p class="inline">コードキャンプ</p>　
+                      <p class="inline">codecamp</p>
+                    </div>
+                  </a>
                 </div>
                 <div class="inner-box">
-                  <!--<a href="https://web-camp.io/">-->
+                  <a href="https://web-camp.io/">
                     <img src="material/DMM.jpeg">
                     <p>キーワード</p>
-                    <p class="keyword">DMM</p>
-                    <p class="keyword">dmm</p>
-                    <p class="keyword">ディーエムエム</p>　
-                  <!--</a>-->  
+                    <div class="keyword">
+                      <p class="inline">DMM</p>
+                      <p class="inline">dmm</p>
+                      <p class="inline">ディーエムエム</p>
+                    </div>
+                  </a>
                 </div>
                 <div class="inner-box">
-                  <!--<a href="https://www.sejuku.net/">-->
+                  <a href="https://www.sejuku.net/">
                     <img src="material/samurai.png">
                     <p>キーワード</p>
-                    <p class="keyword">侍エンジニア</p>
-                    <p class="keyword">さむらい</p>　
-                    <p class="keyword">samurai</p>                  
-                  <!--</a>-->  
+                    <div class="keyword">
+                      <p class="inline">侍エンジニア</p>
+                      <p class="inline">さむらい</p>　
+                      <p class="inline">samurai</p>    
+                    </div>
+                  </a>
                 </div>
                 <div class="inner-box">
-                  <!--<a href="https://techacademy.jp/">-->
+                  <a href="https://techacademy.jp/">
                     <img src="material/techacademy.png">
                     <p>キーワード</p>
-                    <p class="keyword">テックアカデミー</p>
-                    <p class="keyword">てっくあかでみー</p>　
-                    <p class="keyword">techacademy</p>                  
-                  <!--</a>-->  
+                    <div class="keyword">
+                      <p class="inline">テックアカデミー</p>
+                      <p class="inline">てっくあかでみー</p>　
+                      <p class="inline">techacademy</p>
+                    </div>
+                  </a>
                 </div>
                 <div class="inner-box">
-                  <!--<a href="https://tech-camp.in/">-->
+                  <a href="https://tech-camp.in/">
                     <img src="material/techcamp.png">
                     <p>キーワード</p>
-                    <p class="keyword">てっくきゃんぷ</p>
-                    <p class="keyword">テックキャンプ</p>　
-                    <p class="keyword">techcamp</p>                  
-                  <!--</a>-->  
+                    <div class="keyword">
+                      <p class="inline">てっくきゃんぷ</p>
+                      <p class="inline">テックキャンプ</p>　
+                      <p class="inline">techcamp</p>
+                    </div>
+                  </a>
                 </div>
             </div>    
         </section> 
@@ -79,8 +91,10 @@
                 let keyword = $(element).text();
                 if(keyword.indexOf(text) === -1){
                   $(element).parent().css("display", "none");
+                  $(element).parent().parent().css("display", "none")
                 }else{
                   $(element).parent().css("display", "block");
+                  $(element).parent().parent().css("display", "block")
                 }
                 //if(keyword.indexOf(text) === -1){
                 //  $(".inner-box").css("display", "none");
@@ -95,6 +109,7 @@
               let text = $("#searchSpace").val();
               if(text === ""){
                 $(".inner-box").css("display", "block");
+                $("a").css("display", "block")
               }else{
                 Search(text);
               }
